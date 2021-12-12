@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Vehicle</title>
+</head>
+<body>
+    <form method="get" action="/addVehicle">
+    <input type="submit" value="Add vehicle"></form>
+    <br>
+    <br>
+    <table border="1px solid black">
+        <tr>
+            <td>Delete</td>
+            <td>Vehicle Model</td>
+            <td>Type</td>
+            <td>Year</td>
+            <td>Mileage</td>
+            <td>Still Using</td>
+            <td>Edit</td>
+        </tr>
+        <% for(let i=0;i<vehicleData.length;i++) { %>
+            <tr>
+                <td><img src="https://cdn.iconscout.com/icon/free/png-256/delete-736-470378.png" height="20px" width="20px" onclick="mercyDelete(<%= vehicleData[i].vehicle_id%>)"></td>
+                <td><%= vehicleData[i].vDescription %></td>
+                <td><%= vehicleData[i].vType %></td>
+                <td><%= vehicleData[i].vYear %></td>
+                <td><%= vehicleData[i].vMileage %></td>
+                <td><%= vehicleData[i].vStillUsing %></td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Font_Awesome_5_solid_edit.svg/512px-Font_Awesome_5_solid_edit.svg.png" height="20px" width="20px" onclick="editVehicle(<%= vehicleData[i].vehicle_id %>)"></td>
+            </tr>
+            
+         <% }  %> 
+    </table>
+
+    <script>
+        function mercyDelete(vehicle_id) {
+            var ans = prompt("Delete vehicle " + vehicle_id + "?", "N");
+            if (ans.toLowerCase() === "y") {
+                window.location.href = "/deleteVehicle/" + vehicle_id;
+            }
+        }
+
+        function editVehicle(vehicle_id) {
+            window.location.href = "/editVehicle/" + vehicle_id;
+        }
+    </script>
+
+
+</body>
+</html>

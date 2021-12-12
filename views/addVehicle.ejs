@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vehicle</title>
+</head>
+<body>
+    <h1>Add Vehicle</h1>
+    <form method="POST" action="/addVehicle">   
+        <label for="vModel">Vehicle Model</label>
+        <input type="text" id="vModel" name="vDescription"><br><br>
+
+        <label for="vType">Vehicle Type</label><br>
+        <input type="radio" id="vTypeC" name="vType" value="C" checked>
+        <label for="vTypeC">C</label><br>
+
+        <input type="radio" id="vTypeT" name="vType" value="T">
+        <label for="vTypeT">T</label><br>
+        <input type="radio" id="vTypeB" name="vType" value="B">
+        <label for="vTypeB">B</label><br>
+        <input type="radio" id="vTypeM" name="vType" value="M">
+        <label for="vTypeM">M</label><br><br>
+
+        <label for="vYear">Vehicle Year</label>
+        <input type="number" id="vYear" name="vYear" min="1950"><br><br>
+
+        <label for="vMileage">Vehicle Mileage</label>
+        <input type="" id="vMileage" name="vMileage"><br><br>
+
+        <label for="vStillUsing">Is it still being used?</label><br>
+        <input type="radio" id="vStillUsingY" name="vStillUsing" value="Y">
+        <label for="vStillUsingY">Y</label><br>
+        <input type="radio" id="vStillUsingN" name="vStillUsing" value="Y">
+        <label for="vStillUsingN">N</label><br>
+        <br><br>
+        <input type="submit" value="Save">
+    </form>
+    <br>
+    <form method="get" action="/displayVehicle">
+        <input type="submit" value="cancle">
+    </form>
+    
+</body>
+</html>
